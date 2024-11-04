@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Uzi - Cindy",
-        "img": "/assets/cindy.jpg",
+        "img": "./assets/cindy.jpg",
         "src": "./assets/cindy.mp3"
     },
     {
