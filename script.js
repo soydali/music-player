@@ -45,7 +45,7 @@ $(".player-progress").click(function (e) {
 index = 0
 
 $(".fa-forward").click(function () {
-    $.get("/data.json", function (data) {
+    $.get("./data.json", function (data) {
         if (index == (data.length - 1)){
             index = 0
         }else{
@@ -61,33 +61,3 @@ $(".fa-forward").click(function () {
     });
 })
 
-
-// eski
-// var play = false
-// var interval
-
-// $("#play").click(function () {
-//     button = $(this)
-
-//     music = $("audio")[0]
-
-//     if (play) {
-//         button.removeClass("fa-pause")
-//         button.addClass("fa-play")
-//         play = false
-//         music.pause()
-
-//         clearInterval(interval);
-//     } else {
-//         button.removeClass("fa-play")
-//         button.addClass("fa-pause")
-//         play = true
-//         music.play()
-//         interval = setInterval(function () {
-//             bar = $(".progress")
-//             barLength = (music.currentTime * 100) / music.duration
-//             bar.css({"width": `${barLength}%`})
-//         }, 100);
-//     }
-
-// });
