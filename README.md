@@ -1,3 +1,3 @@
 To do list:
- - [] Youtube integration.
+ - [ ] Youtube integration.
  - [ ] Can be customized.
