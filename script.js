@@ -4,7 +4,7 @@ music = $("audio")[0]
 button = $("#play")
 
 $("#play").click(function () {
-    
+
 
 
     if (play) {
@@ -46,18 +46,41 @@ index = 0
 
 $(".fa-forward").click(function () {
     $.get("./data.json", function (data) {
-        if (index == (data.length - 1)){
+        if (index == (data.length - 1)) {
             index = 0
-        }else{
+        } else {
             index = index + 1
         }
         play = false
         button.removeClass("fa-pause")
         button.addClass("fa-play")
         $(".player-info h1").text(data[index].name)
-        $(".player-image").css({"background":`url(${data[index].img})`, "background-size": "cover", "background-position": "center"})
-        $(".bg-image").css({"background":`url(${data[index].img})`, "background-size": "cover", "background-position": "center"})
+        $(".player-image").css({ "background": `url(${data[index].img})`, "background-size": "cover", "background-position": "center" })
+        $(".bg-image").css({ "background": `url(${data[index].img})`, "background-size": "cover", "background-position": "center" })
         music.src = data[index].src
     });
 })
 
+$(".fa-backward").click(function () {
+    $.get("./data.json", function (data) {
+        if (index != 0) {
+            index = index - 1
+            play = false
+            button.removeClass("fa-pause")
+            button.addClass("fa-play")
+            $(".player-info h1").text(data[index].name)
+            $(".player-image").css({ "background": `url(${data[index].img})`, "background-size": "cover", "background-position": "center" })
+            $(".bg-image").css({ "background": `url(${data[index].img})`, "background-size": "cover", "background-position": "center" })
+            music.src = data[index].src
+        } else {
+            index = data.length - 1
+            lay = false
+            button.removeClass("fa-pause")
+            button.addClass("fa-play")
+            $(".player-info h1").text(data[index].name)
+            $(".player-image").css({ "background": `url(${data[index].img})`, "background-size": "cover", "background-position": "center" })
+            $(".bg-image").css({ "background": `url(${data[index].img})`, "background-size": "cover", "background-position": "center" })
+            music.src = data[index].src
+        }
+    });
+})
