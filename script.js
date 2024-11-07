@@ -74,7 +74,7 @@ $(".fa-backward").click(function () {
             music.src = data[index].src
         } else {
             index = data.length - 1
-            lay = false
+            play = false
             button.removeClass("fa-pause")
             button.addClass("fa-play")
             $(".player-info h1").text(data[index].name)
