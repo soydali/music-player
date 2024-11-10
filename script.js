@@ -11,8 +11,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
 $("#search-button").click(async function () {
-    videoId = await $("#search").val().split("=")[1]
-    console.log(videoId)
+    videoId = await $("#search").val()
     if (!first) {
         $(".search-box").css({ "position": "absolute" })
         $(".search-box").animate({ top: "10px" }, "slow")
@@ -70,7 +69,7 @@ $("#play").click(function () {
             if (barLength >= 100) {
                 button.removeClass("fa-pause")
                 button.addClass("fa-play")
-                music.pause()
+                player.pauseVideo()
                 player.seekTo(0, true);
                 play = false
             }
