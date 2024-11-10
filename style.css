@@ -18,24 +18,60 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("assets/cindy.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  filter: blur(50px);
+  background-color: #131313;
+  filter: blur(15px);
   scale: 1.1;
   z-index: -1;
 }
 
-.player {
-  position: relative;
-  color: #fff;
+.search-box{
   display: flex;
+  align-items: center;
+  color: white;
+  width: 500px;
+  height: 70px;
+  background-color: #ffffff2c;
+  gap: 10px;
+  padding: 0px 10px;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+.search-box i{
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#search{
+  appearance: none;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5em;
+  color: white;
+}
+
+#search::placeholder{
+  color: white;
+}
+
+#search::-webkit-search-cancel-button{
+  display: none;
+}
+
+.player {
+  display: none;
+  position: relative;
+  top: 50px;
+  color: #292828;
   align-items: center;
   flex-direction: column;
   width: 500px;
   height: 600px;
-  background-color: #262626;
+  background-color: #a6a4a474;
+  backdrop-filter: blur(15px);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -46,9 +82,6 @@ body {
   width: 75%;
   height: 60%;
   transform: translateY(-75px);
-  background: url("assets/cindy.jpg");
-  background-size: cover;
-  background-position: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 50px;
   border-top-left-radius: 50px;
@@ -60,14 +93,14 @@ body {
 }
 
 .player-info h1 {
-    text-align: center;
+  text-align: center;
   font-weight: 300;
 }
 
 .player-progress {
   width: 75%;
   height: 10px;
-  background-color: #6c6c6c;
+  background-color: #5b5959;
   transform: translateY(-25px);
   border-radius: 5px;
   cursor: pointer;
@@ -75,7 +108,7 @@ body {
 
 .player-progress .progress {
   height: 100%;
-  background-color: #fff;
+  background-color: #ebebeb;
   border-radius: 5px;
 }
 
@@ -83,11 +116,15 @@ body {
   width: 75%;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   font-size: 2em;
 }
 .player-controls i {
   cursor: pointer;
+  color: #292828c2;
+  background-color: #25252517;
+  border-radius: 10px;
+  padding: 15px;
 }
 
 .footer {
