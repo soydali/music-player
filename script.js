@@ -12,6 +12,17 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 $("#search-button").click(async function () {
     videoId = await $("#search").val()
+    if (videoId.includes("v=")){
+        if(videoId.includes("&")){
+            videoId = videoId.split("=")[1]
+            videoId = videoId.split("&")[0]
+        }
+        else{
+            videoId = videoId.split("=")[1]
+        }
+    }if(videoId.includes("youtu.be/")){
+        videoId = videoId.split("youtu.be/")[1]
+    }
     if (!first) {
         $(".search-box").css({ "position": "absolute" })
         $(".search-box").animate({ top: "10px" }, "slow")
